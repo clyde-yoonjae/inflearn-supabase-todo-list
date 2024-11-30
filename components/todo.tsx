@@ -38,6 +38,7 @@ export default function Todo({ todo }) {
   return (
     <div className='w-full flex items-center gap-1'>
       <Checkbox
+        {...({ placeholder: '' } as any)}
         checked={completed}
         onChange={async (e) => {
           await setCompleted(e.target.checked);
@@ -57,24 +58,31 @@ export default function Todo({ todo }) {
 
       {isEditing ? (
         <IconButton
+          {...({ placeholder: '' } as any)}
           onClick={async () => {
             await updateTodoMutation.mutate();
           }}
         >
           {updateTodoMutation.isPending ? (
-            <Spinner />
+            <Spinner {...({ placeholder: '' } as any)} />
           ) : (
             <i className='fas fa-check' />
           )}
         </IconButton>
       ) : (
-        <IconButton onClick={() => setIsEditing(true)}>
+        <IconButton
+          {...({ placeholder: '' } as any)}
+          onClick={() => setIsEditing(true)}
+        >
           <i className='fas fa-pen' />
         </IconButton>
       )}
-      <IconButton onClick={() => deleteTodoMutation.mutate()}>
+      <IconButton
+        {...({ placeholder: '' } as any)}
+        onClick={() => deleteTodoMutation.mutate()}
+      >
         {deleteTodoMutation.isPending ? (
-          <Spinner />
+          <Spinner {...({ placeholder: '' } as any)} />
         ) : (
           <i className='fas fa-trash' />
         )}

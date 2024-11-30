@@ -32,6 +32,7 @@ export default function UI() {
       <h1 className='text-xl'>TODO LIST</h1>
 
       <Input
+        {...({ placeholder: '' } as any)}
         label='Search Todo'
         placeholder='Search Todo'
         icon={<i className='fas fa-search' />}
@@ -44,6 +45,7 @@ export default function UI() {
         todosQuery.data.map((todo) => <Todo key={todo.id} todo={todo} />)}
 
       <Button
+        {...({ placeholder: '' } as any)}
         onClick={() => createTodoMutation.mutate()}
         loading={createTodoMutation.isPending}
       >
