@@ -16,4 +16,6 @@ Todo-List
 
 ## 결과물
 
-![프로젝트 결과](./public/121.jpg)
+## ![프로젝트 결과](./public/121.jpg)
+
+![프로젝트 결과](./public/image.png)
